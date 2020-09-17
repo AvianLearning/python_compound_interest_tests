@@ -16,24 +16,24 @@ class CompoundInterestTest(unittest.TestCase):
     # A is the amount at the end of the investment
 
     def test_can_find_principle(self):
-        compound_interest = CompoundInterest(100, 20, 10)
-        self.assertEqual(100, compound_interest.principle)
+        compound_interest = CompoundInterest(100, 20, 0.1)
+        self.assertEqual(100, compound_interest.p)
 
     def test_can_find_years(self):
-        compound_interest = CompoundInterest(100, 20, 10)
-        self.assertEqual(20, compound_interest.years)
+        compound_interest = CompoundInterest(100, 20, 0.1)
+        self.assertEqual(20, compound_interest.y)
 
     def test_can_find_interest(self):
-        compound_interest = CompoundInterest(100, 20, 10)
-        self.assertEqual(10, compound_interest.interest)
+        compound_interest = CompoundInterest(100, 20, 0.1)
+        self.assertEqual(0.1, compound_interest.i)
         
-    def test_output_of_one_plus_rate_over_times_compounded(self):
-        compound_interest = CompoundInterest(100, 20, 10)
-        self.assertEqual(round(1.83, 2), round((1 + compound_interest.interest / 12), 2))    
+    # def test_output_of_one_plus_rate_over_times_compounded(self):
+    #     compound_interest = CompoundInterest(100, 0.2, 10)
+    #     self.assertEqual(round(1.83, 2), round((1 + compound_interest.i / 12), 2))    
     # Should return 732.81 given 100 principal, 10 percent, 20 years
-    # def test_returns_732_point81_given_100(self):
-    #     compound_interest = CompoundInterest(100, 20, 10)
-    #     self.assertEqual(732.81, compound_interest.amount_returned())
+    def test_returns_732_point81_given_100(self):
+        compound_interest = CompoundInterest(100, 20, 0.1)
+        self.assertEqual(732.81, compound_interest.amount_returned())
 
 
     # Should return 181.94 given 100 principal, 6 percent, 10 years
