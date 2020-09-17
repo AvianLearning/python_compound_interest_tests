@@ -37,7 +37,9 @@ class CompoundInterestTest(unittest.TestCase):
 
 
     # Should return 181.94 given 100 principal, 6 percent, 10 years
-
+    def test_returns_181point94_point81_given_above(self):
+        compound_interest = CompoundInterest(100, 10, 0.06)
+        self.assertEqual(181.94, compound_interest.amount_returned())
     # Should return 149,058.55 given 100000 principal, 5 percent, 8 years
 
     # Should return 0.00 given 0 principal, 10 percent, 1 year
