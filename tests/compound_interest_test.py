@@ -23,6 +23,11 @@ class CompoundInterestTest(unittest.TestCase):
         compound_interest = CompoundInterest(100, 20, 10)
         self.assertEqual(20, compound_interest.years)
 
+    def test_can_find_interest(self):
+        compound_interest = CompoundInterest(100, 20, 10)
+        self.assertEqual(10, compound_interest.interest)
+        
+        
     # Should return 732.81 given 100 principal, 10 percent, 20 years
     # def test_returns_732_point81_given_100(self):
     #     compound_interest = CompoundInterest(100, 20, 10)
